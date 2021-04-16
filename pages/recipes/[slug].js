@@ -13,7 +13,7 @@ export async function getStaticPaths() {
     params: { slug: item.fields.slug },
   }));
 
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 }
 
 export async function getStaticProps({ params }) {
@@ -30,6 +30,9 @@ export async function getStaticProps({ params }) {
 
 export default function RecipeDetails({recipe}) {
   console.log(recipe);
+  if(!recipe) return (
+    <div>Loading...</div>;
+  )
   return <div>
     <div className="banner">
       <Image src={`https:${recipe.fields.featuredImage.fields.file.url}`} 
