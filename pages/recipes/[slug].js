@@ -40,6 +40,7 @@ export default function RecipeDetails({recipe}) {
       <h4>{recipe.fields.title}</h4>
     </div>
     <div className="time">
+      <h2>Time cook:</h2>
       <p>This marmite need {recipe.fields.cookingTime} to cook</p>
     </div>
     <div className="ingredients">
